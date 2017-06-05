@@ -29,7 +29,9 @@
   (add-hook 'scala-mode-hook (lambda () (setq comment-start "/* "
 															 comment-end " */"
 															 comment-style 'multi-line
-															 comment-empty-lines t))))
+															 comment-empty-lines t)))
+  (setq ensime-startup-notification nil)
+  (setq ensime-startup-snapshot-notification nil))
 
 (use-package material-theme
   :config
@@ -49,7 +51,7 @@
 
 (use-package flx-ido
   :config
-  (ido-mode 1)
+  (ido-mode -1)
   (ido-everywhere nil)
   (flx-ido-mode 1)
   (setq ido-enable-flex-matching t)
@@ -125,6 +127,8 @@
 
 (use-package magit)
 
+(use-package hydra)
+
 (use-package auto-package-update
   :config
   (auto-package-update-maybe))
@@ -150,7 +154,7 @@
  '(neo-force-change-root t)
  '(package-selected-packages
 	(quote
-	 (untiled-new-buffer auto-package-update magit pug-mode ace-jump-buffer fill-column-indicator gulp-task-runner js2-mode smex flx-ido projectile ace-window tide move-text move-text-ensime multiple-cursors json-mode gradle-mode groovy-mode neotree markdown-mode material-theme ensime use-package)))
+	 (hydra untiled-new-buffer auto-package-update magit pug-mode ace-jump-buffer fill-column-indicator gulp-task-runner js2-mode smex flx-ido projectile ace-window tide move-text move-text-ensime multiple-cursors json-mode gradle-mode groovy-mode neotree markdown-mode material-theme ensime use-package)))
  '(prog-mode-hook
 	(quote
 	 (linum-mode column-number-mode show-paren-mode projectile-mode)))
