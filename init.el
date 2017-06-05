@@ -30,6 +30,9 @@
 															 comment-end " */"
 															 comment-style 'multi-line
 															 comment-empty-lines t)))
+  (add-hook 'scala-mode-hook (lambda ()
+										 (define-key scala-mode-map "\C-c\C-dd" 'ensime-db-attach)))
+
   (setq ensime-startup-notification nil)
   (setq ensime-startup-snapshot-notification nil))
 
