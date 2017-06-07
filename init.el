@@ -36,9 +36,13 @@
   (setq ensime-startup-notification nil)
   (setq ensime-startup-snapshot-notification nil))
 
-(use-package material-theme
+;;(use-package material-theme
+;;  :config
+;;  (load-theme 'material t))
+
+(use-package zenburn-theme
   :config
-  (load-theme 'material t))
+  (load-theme 'zenburn t))
 
 (use-package markdown-mode)
 
