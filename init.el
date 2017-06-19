@@ -140,6 +140,11 @@
   :config
   (auto-package-update-maybe))
 
+(use-package anaconda-mode
+  :config
+  (add-hook 'python-mode-hook 'anaconda-mode)
+  (add-hook 'python-mode-hook 'anaconda-eldoc-mode))
+
 ;; This function is very important to me.
 (defun setup-indent-new-comment-line ()
   (local-set-key (kbd "C-M-j") 'c-indent-new-comment-line))
@@ -161,7 +166,7 @@
  '(neo-force-change-root t)
  '(package-selected-packages
 	(quote
-	 (hydra untiled-new-buffer auto-package-update magit pug-mode ace-jump-buffer fill-column-indicator gulp-task-runner js2-mode smex flx-ido projectile ace-window tide move-text move-text-ensime multiple-cursors json-mode gradle-mode groovy-mode neotree markdown-mode material-theme ensime use-package)))
+	 (anaconda-mode hydra untiled-new-buffer auto-package-update magit pug-mode ace-jump-buffer fill-column-indicator gulp-task-runner js2-mode smex flx-ido projectile ace-window tide move-text move-text-ensime multiple-cursors json-mode gradle-mode groovy-mode neotree markdown-mode material-theme ensime use-package)))
  '(prog-mode-hook
 	(quote
 	 (linum-mode column-number-mode show-paren-mode projectile-mode)))
