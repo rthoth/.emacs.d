@@ -10,7 +10,10 @@
 ;;				 '("melpa-stable" . "https://stable.melpa.org/packages/") t)
 
 (add-to-list 'package-archives
-	     '("melpa" . "https://melpa.org/packages/"))
+				 '("melpa" . "https://melpa.org/packages/"))
+
+(add-to-list 'package-archives
+             '("elpy" . "http://jorgenschaefer.github.io/packages/"))
 
 
 ;; Fetch the list of packages
@@ -140,15 +143,13 @@
   :config
   (auto-package-update-maybe))
 
-(use-package anaconda-mode
-  :config
-  (add-hook 'python-mode-hook 'anaconda-mode)
-  (add-hook 'python-mode-hook 'anaconda-eldoc-mode))
-
 ;; This function is very important to me.
 (defun setup-indent-new-comment-line ()
   (local-set-key (kbd "C-M-j") 'c-indent-new-comment-line))
 
+(use-package elpy
+  :config
+  (elpy-enable))
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
@@ -166,10 +167,11 @@
  '(neo-force-change-root t)
  '(package-selected-packages
 	(quote
-	 (anaconda-mode hydra untiled-new-buffer auto-package-update magit pug-mode ace-jump-buffer fill-column-indicator gulp-task-runner js2-mode smex flx-ido projectile ace-window tide move-text move-text-ensime multiple-cursors json-mode gradle-mode groovy-mode neotree markdown-mode material-theme ensime use-package)))
+	 (elpy hydra untiled-new-buffer auto-package-update magit pug-mode ace-jump-buffer fill-column-indicator gulp-task-runner js2-mode smex flx-ido projectile ace-window tide move-text move-text-ensime multiple-cursors json-mode gradle-mode groovy-mode neotree markdown-mode material-theme ensime use-package)))
  '(prog-mode-hook
 	(quote
 	 (linum-mode column-number-mode show-paren-mode projectile-mode)))
+ '(python-indent-offset 4)
  '(ring-bell-function (quote ignore))
  '(scala-indent:step 3)
  '(standard-indent 3)
