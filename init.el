@@ -113,22 +113,6 @@
 
 (use-package gulp-task-runner)
 
-(use-package fill-column-indicator
-  :config
-  (defvar-local company-fci-mode-on-p nil)
-
-  (defun company-turn-off-fci(&rest ignore)
-	 (when (boundp 'fci-mode)
-		(setq company-fci-mode-on-p fci-mode)
-		(when fci-mode (fci-mode -1))))
-
-  (defun company-maybe-turn-on-fci(&rest ignore)
-	 (when company-fci-mode-on-p (fci-mode 1)))
-
-  (add-hook 'company-completion-started-hook 'company-turn-off-fci)
-  (add-hook 'company-completion-finished-hook 'company-maybe-turn-on-fci)
-  (add-hook 'company-completion-cancelled-hook 'company-maybe-turn-on-fci))
-
 (use-package ace-jump-buffer
   :bind
   ("M-]" . ace-jump-buffer))
@@ -151,6 +135,8 @@
   :config
   (elpy-enable))
 
+(use-package adoc-mode)
+
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -158,7 +144,6 @@
  ;; If there is more than one, they won't work right.
  '(c-basic-offset 3)
  '(comment-multi-line t)
- '(fill-column 90)
  '(indent-tabs-mode t)
  '(inhibit-startup-echo-area-message "Hello rthoth! How are your codes?")
  '(inhibit-startup-screen t)
@@ -167,7 +152,7 @@
  '(neo-force-change-root t)
  '(package-selected-packages
 	(quote
-	 (elpy hydra untiled-new-buffer auto-package-update magit pug-mode ace-jump-buffer fill-column-indicator gulp-task-runner js2-mode smex flx-ido projectile ace-window tide move-text move-text-ensime multiple-cursors json-mode gradle-mode groovy-mode neotree markdown-mode material-theme ensime use-package)))
+	 (adoc-mode elpy hydra untiled-new-buffer auto-package-update magit pug-mode ace-jump-buffer gulp-task-runner js2-mode smex flx-ido projectile ace-window tide move-text move-text-ensime multiple-cursors json-mode gradle-mode groovy-mode neotree markdown-mode material-theme ensime use-package)))
  '(prog-mode-hook
 	(quote
 	 (linum-mode column-number-mode show-paren-mode projectile-mode)))
