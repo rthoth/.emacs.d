@@ -35,7 +35,7 @@
 															 comment-empty-lines t)))
   (add-hook 'scala-mode-hook (lambda ()
 										 (define-key scala-mode-map "\C-c\C-dd" 'ensime-db-attach)))
-
+  (add-hook 'sbt-mode-hook 'toggle-truncate-lines)
   (setq ensime-startup-notification nil)
   (setq ensime-startup-snapshot-notification nil))
 
