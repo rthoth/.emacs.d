@@ -160,7 +160,7 @@
 	 (linum-mode column-number-mode show-paren-mode projectile-mode)))
  '(python-indent-offset 4)
  '(ring-bell-function (quote ignore))
- '(scala-indent:step 3)
+ '(scala-indent:step 2)
  '(standard-indent 3)
  '(tab-width 3)
  '(text-mode-hook
