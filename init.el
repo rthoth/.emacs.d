@@ -6,15 +6,14 @@
 
 (require 'package)
 
-;;(add-to-list 'package-archives
-;;				 '("melpa-stable" . "https://stable.melpa.org/packages/") t)
-
 (add-to-list 'package-archives
-				 '("melpa" . "https://melpa.org/packages/"))
+				 '("melpa-stable" . "https://stable.melpa.org/packages/") t)
 
 (add-to-list 'package-archives
              '("elpy" . "http://jorgenschaefer.github.io/packages/"))
 
+(add-to-list 'package-archives
+				 '("melpa" . "https://melpa.org/packages/"))
 
 ;; Fetch the list of packages
 (unless package-archive-contents (package-refresh-contents))
@@ -27,17 +26,27 @@
 (setq use-package-always-ensure t)
 
 ;; My packages!
+
 (use-package ensime
+  :pin melpa
+  :config
+  (setq ensime-startup-notification nil)
+  (setq ensime-startup-snapshot-notification nil))
+
+(use-package sbt-mode
+  :pin melpa
+  :config
+  (add-hook 'sbt-mode-hook 'toggle-truncate-lines))
+
+(use-package scala-mode
+  :pin melpa
   :config
   (add-hook 'scala-mode-hook (lambda () (setq comment-start "/* "
 															 comment-end " */"
 															 comment-style 'multi-line
 															 comment-empty-lines t)))
   (add-hook 'scala-mode-hook (lambda ()
-										 (define-key scala-mode-map "\C-c\C-dd" 'ensime-db-attach)))
-  (add-hook 'sbt-mode-hook 'toggle-truncate-lines)
-  (setq ensime-startup-notification nil)
-  (setq ensime-startup-snapshot-notification nil))
+										 (define-key scala-mode-map "\C-c\C-dd" 'ensime-db-attach))))
 
 ;;(use-package material-theme
 ;;  :config
