@@ -146,6 +146,11 @@
 
 (use-package adoc-mode)
 
+(use-package goto-chg
+  :bind
+  (("C-." . goto-last-change)
+	("C-," . goto-last-change-reverse)))
+
 (global-set-key (kbd "C-x C-b") 'ibuffer)
 
 (custom-set-variables
@@ -163,7 +168,7 @@
  '(neo-force-change-root t)
  '(package-selected-packages
 	(quote
-	 (adoc-mode elpy hydra untiled-new-buffer auto-package-update magit pug-mode ace-jump-buffer gulp-task-runner js2-mode smex flx-ido projectile ace-window tide move-text move-text-ensime multiple-cursors json-mode gradle-mode groovy-mode neotree markdown-mode material-theme ensime use-package)))
+	 (goto-chg adoc-mode elpy hydra untiled-new-buffer auto-package-update magit pug-mode ace-jump-buffer gulp-task-runner js2-mode smex flx-ido projectile ace-window tide move-text move-text-ensime multiple-cursors json-mode gradle-mode groovy-mode neotree markdown-mode material-theme ensime use-package)))
  '(prog-mode-hook
 	(quote
 	 (linum-mode column-number-mode show-paren-mode projectile-mode)))
