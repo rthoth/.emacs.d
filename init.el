@@ -25,6 +25,9 @@
 ;; use-package configurations
 (setq use-package-always-ensure t)
 
+;;
+(setq use-package-always-pin "melpa-stable")
+
 ;; My packages!
 
 (use-package ensime
@@ -150,6 +153,10 @@
   :bind
   (("C-." . goto-last-change)
 	("C-," . goto-last-change-reverse)))
+
+(use-package systemd)
+
+(use-package vue-mode)
 
 (global-set-key (kbd "C-x C-b") 'ibuffer)
 
