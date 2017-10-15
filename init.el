@@ -28,6 +28,12 @@
 ;;
 (setq use-package-always-pin "melpa-stable")
 
+(defun small-font()
+  "Set font size to small size"
+  (interactive)
+  (setq buffer-face-mode-face '(:size 6))
+  (buffer-face-mode))
+
 ;; My packages!
 
 (use-package ensime
@@ -39,7 +45,8 @@
 (use-package sbt-mode
   :pin melpa
   :config
-  (add-hook 'sbt-mode-hook 'toggle-truncate-lines))
+  (add-hook 'sbt-mode-hook 'toggle-truncate-lines
+				'small-font))
 
 (use-package scala-mode
   :pin melpa
@@ -197,5 +204,5 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(default ((t (:family "Hack"))))
+ '(default ((t (:inherit nil :stipple nil :background "#3F3F3F" :foreground "#DCDCCC" :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight normal :height 105 :width normal :foundry "simp" :family "Hack"))))
  '(ensime-implicit-highlight ((t (:underline nil)))))
