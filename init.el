@@ -12,8 +12,8 @@
 (add-to-list 'package-archives
              '("elpy" . "http://jorgenschaefer.github.io/packages/"))
 
-(add-to-list 'package-archives
-				 '("melpa" . "https://melpa.org/packages/"))
+;;(add-to-list 'package-archives
+;;				 '("melpa" . "https://melpa.org/packages/"))
 
 ;; Fetch the list of packages
 (unless package-archive-contents (package-refresh-contents))
@@ -37,19 +37,16 @@
 ;; My packages!
 
 (use-package ensime
-  :pin melpa
   :config
   (setq ensime-startup-notification nil)
   (setq ensime-startup-snapshot-notification nil))
 
 (use-package sbt-mode
-  :pin melpa
   :config
   (add-hook 'sbt-mode-hook 'toggle-truncate-lines
 				'small-font))
 
 (use-package scala-mode
-  :pin melpa
   :config
   (add-hook 'scala-mode-hook (lambda () (setq comment-start "/* "
 															 comment-end " */"
@@ -78,6 +75,14 @@
 
 (use-package projectile)
 
+(use-package helm
+  :config
+  (setq helm-mode-fuzzy-match t)
+  (setq helm-completion-in-region-fuzzy-match t)
+  (setq html-candidate-number-limit 20)
+  :bind
+  ("M-x" . helm-M-x))
+
 (use-package flx-ido
   :config
   (ido-mode -1)
@@ -85,11 +90,6 @@
   (flx-ido-mode 1)
   (setq ido-enable-flex-matching t)
   (setq ido-use-faces nil))
-
-(use-package smex
-  :bind
-  (("M-x" . smex)
-	("M-X" . smex-major-mode-commands)))
 
 (use-package groovy-mode)
 
@@ -162,8 +162,6 @@
 	("C-," . goto-last-change-reverse)))
 
 (use-package systemd)
-
-(use-package vue-mode)
 
 (global-set-key (kbd "C-x C-b") 'ibuffer)
 
