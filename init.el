@@ -12,8 +12,8 @@
 (add-to-list 'package-archives
              '("elpy" . "http://jorgenschaefer.github.io/packages/"))
 
-;;(add-to-list 'package-archives
-;;				 '("melpa" . "https://melpa.org/packages/"))
+(add-to-list 'package-archives
+				 '("melpa" . "https://melpa.org/packages/"))
 
 ;; Fetch the list of packages
 (unless package-archive-contents (package-refresh-contents))
@@ -25,7 +25,7 @@
 ;; use-package configurations
 (setq use-package-always-ensure t)
 
-;;
+;; use melpa-stable instead melpa
 (setq use-package-always-pin "melpa-stable")
 
 (defun small-font()
@@ -74,22 +74,27 @@
   ("<f8>" . neotree-toggle))
 
 (use-package projectile)
-
-(use-package helm
-  :config
-  (setq helm-mode-fuzzy-match t)
-  (setq helm-completion-in-region-fuzzy-match t)
-  (setq html-candidate-number-limit 20)
-  :bind
-  ("M-x" . helm-M-x))
+;; (use-package helm
+;;   :config
+;;   (setq helm-mode-fuzzy-match t)
+;;   (setq helm-completion-in-region-fuzzy-match t)
+;;   (setq html-candidate-number-limit 20)
+;;   :bind
+;;   ("M-x" . helm-M-x))
 
 (use-package flx-ido
   :config
-  (ido-mode -1)
-  (ido-everywhere nil)
+  (ido-mode 1)
+  (ido-everywhere 1)
   (flx-ido-mode 1)
   (setq ido-enable-flex-matching t)
   (setq ido-use-faces nil))
+
+(use-package smex
+  :bind
+  ("M-x" . smex)
+  ("M-X" . smex-major-mode-commands)
+  ("C-c C-c M-x" . execute-extendend-command))
 
 (use-package groovy-mode)
 
@@ -186,12 +191,13 @@
 	 (linum-mode column-number-mode show-paren-mode projectile-mode)))
  '(python-indent-offset 4)
  '(ring-bell-function (quote ignore))
+ '(sbt:display-command-buffer nil)
  '(scala-indent:step 2)
  '(standard-indent 3)
  '(tab-width 3)
  '(text-mode-hook
 	(quote
-	 (text-mode-hook-identify column-number-mode linum-mode)))
+	 (text-mode-hook-identify column-number-mode linum-mode projectile-mode)))
  '(tool-bar-mode nil)
  '(truncate-lines t)
  '(typescript-indent-level 3)
