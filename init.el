@@ -74,13 +74,15 @@
   ("<f8>" . neotree-toggle))
 
 (use-package projectile)
-;; (use-package helm
-;;   :config
-;;   (setq helm-mode-fuzzy-match t)
-;;   (setq helm-completion-in-region-fuzzy-match t)
-;;   (setq html-candidate-number-limit 20)
-;;   :bind
-;;   ("M-x" . helm-M-x))
+
+(use-package helm
+  :config
+  (setq helm-M-x-fuzzy-match t)
+  (setq helm-completion-in-region-fuzzy-match t)
+  (setq html-candidate-number-limit 5)
+  :bind
+  ("M-x" . helm-M-x)
+  ("C-x C-f" . helm-find-files))
 
 (use-package flx-ido
   :config
@@ -89,12 +91,6 @@
   (flx-ido-mode 1)
   (setq ido-enable-flex-matching t)
   (setq ido-use-faces nil))
-
-(use-package smex
-  :bind
-  ("M-x" . smex)
-  ("M-X" . smex-major-mode-commands)
-  ("C-c C-c M-x" . execute-extendend-command))
 
 (use-package groovy-mode)
 
@@ -185,7 +181,7 @@
  '(neo-force-change-root t)
  '(package-selected-packages
 	(quote
-	 (goto-chg adoc-mode elpy hydra untiled-new-buffer auto-package-update magit pug-mode ace-jump-buffer gulp-task-runner js2-mode smex flx-ido projectile ace-window tide move-text move-text-ensime multiple-cursors json-mode gradle-mode groovy-mode neotree markdown-mode material-theme ensime use-package)))
+	 (goto-chg adoc-mode elpy hydra untiled-new-buffer auto-package-update magit pug-mode ace-jump-buffer gulp-task-runner js2-mode flx-ido projectile ace-window tide move-text move-text-ensime multiple-cursors json-mode gradle-mode groovy-mode neotree markdown-mode material-theme ensime use-package)))
  '(prog-mode-hook
 	(quote
 	 (linum-mode column-number-mode show-paren-mode projectile-mode)))
