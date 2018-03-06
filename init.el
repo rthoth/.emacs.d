@@ -41,6 +41,14 @@
   (setq ensime-startup-notification nil)
   (setq ensime-startup-snapshot-notification nil))
 
+(use-package meghanada
+  :config
+  (add-hook 'java-mode-hook
+          (lambda ()
+            ;; meghanada-mode on
+            (meghanada-mode t)
+            (flycheck-mode +1))))
+
 (use-package sbt-mode
   :config
   (add-hook 'sbt-mode-hook 'toggle-truncate-lines
@@ -164,6 +172,8 @@
 
 (use-package systemd)
 
+(use-package yaml-mode)
+
 (global-set-key (kbd "C-x C-b") 'ibuffer)
 
 (custom-set-variables
@@ -176,12 +186,14 @@
  '(indent-tabs-mode t)
  '(inhibit-startup-echo-area-message "Hello rthoth! How are your codes?")
  '(inhibit-startup-screen t)
+ '(jdee-complete-function (quote jdee-complete-in-line))
+ '(jdee-server-dir "~/.jdee")
  '(js-indent-level 3)
  '(menu-bar-mode nil)
  '(neo-force-change-root t)
  '(package-selected-packages
 	(quote
-	 (goto-chg adoc-mode elpy hydra untiled-new-buffer auto-package-update magit pug-mode ace-jump-buffer gulp-task-runner js2-mode flx-ido projectile ace-window tide move-text move-text-ensime multiple-cursors json-mode gradle-mode groovy-mode neotree markdown-mode material-theme ensime use-package)))
+	 (meghanada yaml-mode goto-chg adoc-mode elpy hydra untiled-new-buffer auto-package-update magit pug-mode ace-jump-buffer gulp-task-runner js2-mode flx-ido projectile ace-window tide move-text move-text-ensime multiple-cursors json-mode gradle-mode groovy-mode neotree markdown-mode material-theme ensime use-package)))
  '(prog-mode-hook
 	(quote
 	 (linum-mode column-number-mode show-paren-mode projectile-mode)))
