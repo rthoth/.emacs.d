@@ -147,7 +147,9 @@
 
 (use-package pug-mode)
 
-(use-package magit)
+(use-package magit
+  :ensure t
+  :pin melpa-stable)
 
 (use-package hydra)
 
@@ -193,7 +195,7 @@
  '(neo-force-change-root t)
  '(package-selected-packages
 	(quote
-	 (meghanada yaml-mode goto-chg adoc-mode elpy hydra untiled-new-buffer auto-package-update magit pug-mode ace-jump-buffer gulp-task-runner js2-mode flx-ido projectile ace-window tide move-text move-text-ensime multiple-cursors json-mode gradle-mode groovy-mode neotree markdown-mode material-theme ensime use-package)))
+	 (magit meghanada yaml-mode goto-chg adoc-mode elpy hydra untiled-new-buffer auto-package-update pug-mode ace-jump-buffer gulp-task-runner js2-mode flx-ido projectile ace-window tide move-text move-text-ensime multiple-cursors json-mode gradle-mode groovy-mode neotree markdown-mode material-theme ensime use-package)))
  '(prog-mode-hook
 	(quote
 	 (linum-mode column-number-mode show-paren-mode projectile-mode)))
