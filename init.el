@@ -153,9 +153,9 @@
 
 (use-package hydra)
 
-(use-package auto-package-update
-  :config
-  (auto-package-update-maybe))
+;;(use-package auto-package-update
+;;  :config
+;;  (auto-package-update-maybe))
 
 ;; This function is very important to me.
 (defun setup-indent-new-comment-line ()
