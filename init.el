@@ -184,6 +184,7 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(c-basic-offset 3)
+ '(column-number-mode t)
  '(comment-multi-line t)
  '(indent-tabs-mode t)
  '(inhibit-startup-echo-area-message "Hello rthoth! How are your codes?")
@@ -203,6 +204,7 @@
  '(ring-bell-function (quote ignore))
  '(sbt:display-command-buffer nil)
  '(scala-indent:step 2)
+ '(show-paren-mode t)
  '(standard-indent 3)
  '(tab-width 3)
  '(text-mode-hook
