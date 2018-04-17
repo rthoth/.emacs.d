@@ -63,6 +63,9 @@
   (add-hook 'scala-mode-hook (lambda ()
 										 (define-key scala-mode-map "\C-c\C-dd" 'ensime-db-attach))))
 
+;; realgud
+(use-package realgud)
+
 ;;(use-package material-theme
 ;;  :config
 ;;  (load-theme 'material t))
@@ -153,9 +156,10 @@
 
 (use-package hydra)
 
-;;(use-package auto-package-update
-;;  :config
-;;  (auto-package-update-maybe))
+(use-package auto-package-update
+  :config
+  (setq auto-package-update-prompt-before-update t)
+  (setq auto-package-update-delete-old-versions t))
 
 ;; This function is very important to me.
 (defun setup-indent-new-comment-line ()
@@ -196,7 +200,7 @@
  '(neo-force-change-root t)
  '(package-selected-packages
 	(quote
-	 (magit meghanada yaml-mode goto-chg adoc-mode elpy hydra untiled-new-buffer auto-package-update pug-mode ace-jump-buffer gulp-task-runner js2-mode flx-ido projectile ace-window tide move-text move-text-ensime multiple-cursors json-mode gradle-mode groovy-mode neotree markdown-mode material-theme ensime use-package)))
+	 (realgud magit meghanada yaml-mode goto-chg adoc-mode elpy hydra untiled-new-buffer auto-package-update pug-mode ace-jump-buffer gulp-task-runner js2-mode flx-ido projectile ace-window tide move-text move-text-ensime multiple-cursors json-mode gradle-mode groovy-mode neotree markdown-mode material-theme ensime use-package)))
  '(prog-mode-hook
 	(quote
 	 (linum-mode column-number-mode show-paren-mode projectile-mode)))
