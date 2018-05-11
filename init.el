@@ -196,7 +196,7 @@
  '(jdee-complete-function (quote jdee-complete-in-line))
  '(jdee-server-dir "~/.jdee")
  '(js-indent-level 3)
- '(menu-bar-mode nil)
+ '(menu-bar-mode t)
  '(neo-force-change-root t)
  '(package-selected-packages
 	(quote
