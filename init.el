@@ -150,9 +150,9 @@
 
 (use-package pug-mode)
 
-(use-package magit
-  :ensure t
-  :pin melpa-stable)
+;;(use-package magit
+;;  :ensure t
+;;  :pin melpa-stable)
 
 (use-package hydra)
 
