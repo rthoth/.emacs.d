@@ -180,6 +180,8 @@
 
 (use-package yaml-mode)
 
+(use-package protobuf-mode)
+
 (global-set-key (kbd "C-x C-b") 'ibuffer)
 
 (custom-set-variables
@@ -200,7 +202,7 @@
  '(neo-force-change-root t)
  '(package-selected-packages
 	(quote
-	 (realgud magit meghanada yaml-mode goto-chg adoc-mode elpy hydra untiled-new-buffer auto-package-update pug-mode ace-jump-buffer gulp-task-runner js2-mode flx-ido projectile ace-window tide move-text move-text-ensime multiple-cursors json-mode gradle-mode groovy-mode neotree markdown-mode material-theme ensime use-package)))
+	 (protobuf-mode realgud magit meghanada yaml-mode goto-chg adoc-mode elpy hydra untiled-new-buffer auto-package-update pug-mode ace-jump-buffer gulp-task-runner js2-mode flx-ido projectile ace-window tide move-text move-text-ensime multiple-cursors json-mode gradle-mode groovy-mode neotree markdown-mode material-theme ensime use-package)))
  '(prog-mode-hook
 	(quote
 	 (linum-mode column-number-mode show-paren-mode projectile-mode)))
