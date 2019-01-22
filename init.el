@@ -36,6 +36,8 @@
 
 ;; My packages!
 
+(use-package ranger)
+
 (use-package ensime
   :config
   (setq ensime-startup-notification nil)
